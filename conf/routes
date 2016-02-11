@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+GET		/subscribe/:MSISDN				controllers.Application.subscribe(MSISDN: String)
+GET     /check/:MSISDN/:otp             controllers.Application.check(MSISDN: String, otp: String)
+POST    /sms				            controllers.Application.sms()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
